@@ -1,0 +1,38 @@
+--- linux-5.10.10/arch/arm/boot/dts/stm32mp157f-dk2.dts	2021-06-22 18:07:40.779461780 +0530
++++ stm32mp157f-dk2.dts	2021-06-22 22:12:07.199997746 +0530
+@@ -99,6 +99,12 @@
+ 	};
+ };
+ 
++&i2c5 {
++
++        status="okay";
++
++};
++
+ &ltdc {
+ 	status = "okay";
+ 
+@@ -155,3 +161,22 @@
+ 		vddio-supply = <&v3v3>;
+ 	};
+ };
++
++&usart3 {
++	pinctrl-names = "default", "sleep";	/* pin configurations definition */
++	pinctrl-0 = <&usart3_pins_c>;			/* default pin configuration selection */
++	pinctrl-1 = <&usart3_sleep_pins_c>;		/* sleep pin configuration selection */
++	pinctrl-2 = <&usart3_idle_pins_c>;		/* idle pin configuration selection */
++	status = "okay";				/* device activation */
++};
++
++&uart7 {
++
++   pinctrl-names = "default","sleep";
++   pinctrl-0 = <&uart7_pins_c>;
++   pinctrl-1 = <&uart7_sleep_pins_c>;
++   pinctrl-2 = <&uart7_idle_pins_c>;
++   status = "okay";
++
++};
++
