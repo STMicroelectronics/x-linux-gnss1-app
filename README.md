@@ -1,4 +1,5 @@
 X-LINUX_GNSS1_V1.1.0 Linux Package
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-gnss1.svg?color=brightgreen)
 ==============================================================================================================
 The X-LINUX-GNSS1 is a Linux Package running on STM32MPU .This software provides applications for reading the NMEA GNSS data from X-NUCLEO-GNSS1A1(Teseo-LIV3F) or X-NUCLEO-GNSS2A1(Teseo-VIC3DA) plugged to the Arduino Connector of STM32MP157F-DK2 Discovery Board .X-LINUX-GNSS1 includes user space applications and Yocto Recipe (device tree) for the X-NUCLEO-GNSS1A1/X-NUCLEO-GNSS2A1 board ,a library for NMEA protocol support and POSIX thread for task scheduling to ensure better asynchronous message parsing.
 
