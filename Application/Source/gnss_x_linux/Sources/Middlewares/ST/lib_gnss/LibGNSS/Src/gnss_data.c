@@ -25,13 +25,14 @@
 #endif /* ASSISTED_GNSS */
 #include "gnss_geofence.h"
 #include "gnss_lib_config.h"
+#include <unistd.h>
 
 #include "teseo_liv3f_conf.h"
 
 /* Private defines -----------------------------------------------------------*/
 #define MSG_SZ (256)
 #define CMD_SZ (90)
-
+#define OS_Delay(X)	usleep(X*1000)
 /* Private variables ---------------------------------------------------------*/
 
 /* Variable that holds the values got by the tracking process */
