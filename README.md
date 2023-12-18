@@ -14,7 +14,7 @@ from X-STM32MP-GNSS1.It also contains the corresponding QT Application for Westo
 ### X-LINUX-GNSS1 software features:
 
 Its main feature are :
--Standalone applications to read the NMEA data over UART and I²C
+-Standalone applications to read the NMEA data over UART and IÂ²C
 -Complete software to build applications on Linux using Teseo-LIV3F GNSS module
 -Middleware for the NMEA protocol
 -RTK ( Real Time Kinematics ) Library example and QT application.
@@ -32,91 +32,91 @@ The software uses STM32MPU Uart and I2C driver for accessign the GNSS data. For 
 ### X-LINUX-GNSS1 Package Structure:
 
 x-linux-gnss1-app
-    ¦   en.DM00751078.pdf
-    ¦   Package_License.md
-    ¦   README.md
-    ¦   Release_Notes.md
-    ¦
+    Â¦   en.DM00751078.pdf
+    Â¦   Package_License.md
+    Â¦   README.md
+    Â¦   Release_Notes.md
+    Â¦
     +---Application
-    ¦   +---Binaries
-    ¦   ¦   ¦   README.md
-    ¦   ¦   ¦
-    ¦   ¦   +---gnss1
-    ¦   ¦   ¦       -gnss app binaries
-    ¦   ¦   ¦
-    ¦   ¦   +---gnss1-rtk-lib
-    ¦   ¦           -Binaries for RTK lib
-    ¦   ¦
-    ¦   +---Source
-    ¦       +---gnss_i2c
-    ¦       ¦       gnss_i2c_read.c
-    ¦       ¦       LICENSE.md
-    ¦       ¦       Makefile
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_python
-    ¦       ¦       gnss_pynmea2.py
-    ¦       ¦       LICENSE.md
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_rtk-lib
-    ¦       ¦       -Patch for RTK Lib
-    ¦       ¦
-    ¦       +---gnss_uart
-    ¦       ¦       gnss_uart_read.c
-    ¦       ¦       LICENSE.md
-    ¦       ¦       Makefile
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_x_linux
-    ¦           ¦   LICENSE.md
-    ¦           ¦   Makefile
-    ¦           ¦   README.md
-    ¦           ¦
-    ¦           +---Sources
-    ¦               ¦   CMakeLists.txt
-    ¦               ¦
-    ¦               +---cloud
-    ¦               ¦       -Cloud interface Sources
-    ¦               ¦
-    ¦               +---Drivers
-    ¦               ¦   +---BSP
-    ¦               ¦       -BSP Sources
-    ¦               ¦
-    ¦               +---Inc
-    ¦               ¦       -headers
-    ¦               ¦
-    ¦               +---Middlewares
-    ¦               ¦   +---ST
-    ¦               ¦       +---Middle Ware Sources
-    ¦               ¦
-    ¦               +---Src
-    ¦               ¦       -Application Sources
-    ¦               ¦
-    ¦               +---_htmresc
-    ¦                       logos
-    ¦
+    Â¦   +---Binaries
+    Â¦   Â¦   Â¦   README.md
+    Â¦   Â¦   Â¦
+    Â¦   Â¦   +---gnss1
+    Â¦   Â¦   Â¦       -gnss app binaries
+    Â¦   Â¦   Â¦
+    Â¦   Â¦   +---gnss1-rtk-lib
+    Â¦   Â¦           -Binaries for RTK lib
+    Â¦   Â¦
+    Â¦   +---Source
+    Â¦       +---gnss_i2c
+    Â¦       Â¦       gnss_i2c_read.c
+    Â¦       Â¦       LICENSE.md
+    Â¦       Â¦       Makefile
+    Â¦       Â¦       README.md
+    Â¦       Â¦
+    Â¦       +---gnss_python
+    Â¦       Â¦       gnss_pynmea2.py
+    Â¦       Â¦       LICENSE.md
+    Â¦       Â¦       README.md
+    Â¦       Â¦
+    Â¦       +---gnss_rtk-lib
+    Â¦       Â¦       -Patch for RTK Lib
+    Â¦       Â¦
+    Â¦       +---gnss_uart
+    Â¦       Â¦       gnss_uart_read.c
+    Â¦       Â¦       LICENSE.md
+    Â¦       Â¦       Makefile
+    Â¦       Â¦       README.md
+    Â¦       Â¦
+    Â¦       +---gnss_x_linux
+    Â¦           Â¦   LICENSE.md
+    Â¦           Â¦   Makefile
+    Â¦           Â¦   README.md
+    Â¦           Â¦
+    Â¦           +---Sources
+    Â¦               Â¦   CMakeLists.txt
+    Â¦               Â¦
+    Â¦               +---cloud
+    Â¦               Â¦       -Cloud interface Sources
+    Â¦               Â¦
+    Â¦               +---Drivers
+    Â¦               Â¦   +---BSP
+    Â¦               Â¦       -BSP Sources
+    Â¦               Â¦
+    Â¦               +---Inc
+    Â¦               Â¦       -headers
+    Â¦               Â¦
+    Â¦               +---Middlewares
+    Â¦               Â¦   +---ST
+    Â¦               Â¦       +---Middle Ware Sources
+    Â¦               Â¦
+    Â¦               +---Src
+    Â¦               Â¦       -Application Sources
+    Â¦               Â¦
+    Â¦               +---_htmresc
+    Â¦                       logos
+    Â¦
     +---linux-kernel
-    ¦   +---patch
-    ¦       +---5.15
-    ¦           +---device-tree
-    ¦           ¦   +---patches
-    ¦           ¦   ¦       gnss1.patch
-    ¦           ¦   ¦
-    ¦           ¦   +---Sources
-    ¦           ¦           stm32mp157f-dk2.dts
-    ¦           ¦
-    ¦           +---kernel
-    ¦                   -Kernel patches and Fragments
-    ¦
+    Â¦   +---patch
+    Â¦       +---5.15
+    Â¦           +---device-tree
+    Â¦           Â¦   +---patches
+    Â¦           Â¦   Â¦       gnss1.patch
+    Â¦           Â¦   Â¦
+    Â¦           Â¦   +---Sources
+    Â¦           Â¦           stm32mp157f-dk2.dts
+    Â¦           Â¦
+    Â¦           +---kernel
+    Â¦                   -Kernel patches and Fragments
+    Â¦
     +---_htmresc
             -Logos
 
 ## Hardware Setup:
 
 The current package provides software support for the following boards
- - [X-STM32MP-GNSSx board mounted on STM32MP157F-DK2](https://www.st.com/en/ecosystems/x-nucleo-ihm15a1.html) based on Teseo-LIV3FL or Teseo-LIV4FL. 
- - The board is also compatible with X-NUCLEO-GNSSx and X-NUCLEO-LIV* boards plugged to the Arduino Connectors
+ - [X-STM32MP-GNSSx board mounted on STM32MP157F-DK2](https://www.st.com/en/evaluation-tools/x-stm32mp-gnss1.html) based on Teseo-LIV3FL (or X-STM32MP-GNSS2 based on Teseo-LIV4FL). 
+ - The board is also compatible with X-NUCLEO-GNSSx and X-NUCLEO-LIV* boards plugged to the Arduino Connectors of STM32MP157F-DK2 Board
 
 ## Software Setup:
 
@@ -124,7 +124,7 @@ The section describes the software setup that is required for building, flashing
 
 ### Recommended PC prerequisites
 
-A Linux® PC running Ubuntu® 20.04 or 22.04 is recommended. Developers can follow the link below for details.
+A LinuxÂ® PC running UbuntuÂ® 20.04 or 22.04 is recommended. Developers can follow the link below for details.
 https://wiki.st.com/stm32mpu/wiki/PC_prerequisites
 
 Follow the instructions on the ST wiki page [Image flashing](https://wiki.st.com/stm32mpu/wiki/STM32MP15_Discovery_kits_-_Starter_Package#Image_flashing) to prepare a bootable SD card with the starter package.  
@@ -155,9 +155,9 @@ The resources can be transferred via any of the following methods:
 1. **Using a network connection**
 
 Refer to [How to Transfer a File Over a Network](https://wiki.st.com/stm32mpu/wiki/How_to_transfer_a_file_over_network)
- 
+Â 
 To connect the MPU board to a network, you may connect it to a wired network via the Ethernet jack on the MPU board.  
- 
+Â 
 **OR**  
 
 To connect to a WLAN, refer to [How to Setup a WLAN Connection"](https://wiki.st.com/stm32mpu/wiki/How_to_setup_a_WLAN_connection)
