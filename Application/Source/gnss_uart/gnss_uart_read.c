@@ -39,7 +39,7 @@
  */
  #define BUFF_LEN 	83
  #define DEBUG 		0
- #define SERIALTERMINAL      "/dev/ttySTM2"
+ #define SERIALTERMINAL      "/dev/ttySTM1"
 
 /*
  ******************************************************************************
@@ -67,7 +67,7 @@ int main()
     }
     /*for X-NUCLEO-GNSS1A1(Teseo-LIV3F) : baudrate 9600, 8 bits, no parity, 1 stop bit */
     /*for X-NUCLEO-GNSS2A1(Teseo-VIC3DA) : baudrate 115200, 8 bits, no parity, 1 stop bit */
-    set_interface_attribs(fd, B9600);
+    set_interface_attribs(fd, B115200);
 
     /* Continously read the data */
     do {

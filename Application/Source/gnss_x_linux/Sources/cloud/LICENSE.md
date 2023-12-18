@@ -1,8 +1,13 @@
-SLA0094 Rev2/May 2020
+This software component is provided to you as part of a software package and
+applicable license terms are in the Package_license file. If you received this
+software component outside of a package or without applicable license terms,
+the terms of the SLA0094 license shall apply and are fully reproduced below:
 
-## Software license agreement
+SLA0094 Rev2/Dec 2020
 
-### __ODE SOFTWARE LICENSE AGREEMENT__
+Software license agreement
+
+ODE SOFTWARE LICENSE AGREEMENT
 
 BY INSTALLING, COPYING, DOWNLOADING, ACCESSING OR OTHERWISE USING THIS SOFTWARE OR ANY PART
 THEREOF (AND THE RELATED DOCUMENTATION) FROM STMICROELECTRONICS INTERNATIONAL N.V, SWISS
@@ -49,3 +54,5 @@ THE POSSIBILITY OF SUCH DAMAGE.
 11. EXCEPT AS EXPRESSLY PERMITTED HEREUNDER, NO LICENSE OR OTHER RIGHTS, WHETHER EXPRESS
 OR IMPLIED, ARE GRANTED UNDER ANY PATENT OR OTHER INTELLECTUAL PROPERTY RIGHTS OF
 STMICROELECTRONICS OR ANY THIRD PARTY.
+
+

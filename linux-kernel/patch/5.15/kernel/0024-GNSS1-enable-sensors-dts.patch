@@ -1,0 +1,141 @@
+diff --git a/arch/arm/boot/dts/stm32mp131.dtsi b/arch/arm/boot/dts/stm32mp131.dtsi
+index 8121ddc97..e658da205 100644
+--- a/arch/arm/boot/dts/stm32mp131.dtsi
++++ b/arch/arm/boot/dts/stm32mp131.dtsi
+@@ -1476,7 +1476,7 @@ sdmmc2: mmc@58007000 {
+ 			cap-sd-highspeed;
+ 			cap-mmc-highspeed;
+ 			max-frequency = <130000000>;
+-			status = "disabled";
++			status = "okay";
+ 		};
+ 
+ 		crc1: crc@58009000 {
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+index 58bb9eca8..5e840a4c8 100644
+--- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+@@ -473,7 +473,96 @@ &i2c5 {
+ 	/* spare dmas for other usage */
+ 	/delete-property/dmas;
+ 	/delete-property/dma-names;
++/*LK
+ 	status = "disabled";
++*/
++
++    status = "okay";
++	    /*
++     * X-STM32MP-MSP0
++     *
++     * ism330dhcx -  IMU, add 0x6b, int2 on ISM330DHC_INT2 (PB12)
++     * iis2mdc -         MAG40, add 0x1e, ind-drdy on IIS2MDC_INT_DRDY (PA8)
++     * lps22hh -         Press, add 0x5d, int-drdy on LPS22HH_INT_DRDY (PG8)
++     * iis2dlpc -          Acc, add 0x19, int1 on IIS2DLPC_INT1 (PF3), int2 on IIS2DLPC_INT2 (PI5)
++     * stts22htr -       Temp, add 0x38, alert/int on STTS22H_INT (PG2)
++     * asm330lhhx -  IMU on DIL24, add 0x6a, int1 on DIL24_INT1 (PG15)
++     */
++    st_ism330dhcx@6b {
++        compatible = "st,ism330dhcx";
++        reg =<0x6b>;
++
++        // STM32MP1 - X-STM32MP-MSP0: ISM330DHC_INT2 (PB12)
++       /* st,int-pin = <2>;*/
++        /*interrupt-parent = <&gpiob>;*/
++        interrupt-parent = <&gpiof>;
++        /*interrupts = <12 IRQ_TYPE_LEVEL_HIGH>;*/
++        interrupts = <0 IRQ_TYPE_EDGE_RISING>;
++
++/*        wakeup-source;*/
++
++        status = "okay";
++    };
++
++    iis2mdc_magn@1e {
++        compatible = "st,iis2mdc_magn";
++        reg = <0x1e>;
++
++        // STM32MP1 - X-STM32MP-MSP0: IIS2MDC_INT_DRDY (PA8)
++        interrupt-parent = <&gpioa>;
++        interrupts = <8 IRQ_TYPE_EDGE_RISING>;
++
++        status = "okay";
++    };
++
++     lps22hh_press@5c {
++        compatible = "st,lps22hh";
++        reg = <0x5c>;
++
++        // STM32MP1 - X-STM32MP-MSP0: LPS22HH_INT_DRDY (PG8)
++        interrupt-parent = <&gpiog>;
++        interrupts = <8 IRQ_TYPE_EDGE_RISING>;
++
++        status = "okay";
++    };
++
++    iis2dlpc_accel@19 {
++        compatible = "st,iis2dlpc";
++        reg = <0x19>;
++
++        // STM32MP1 - X-STM32MP-MSP0: IIS2DLPC_INT1 (PF3)
++        st,drdy-int-pin = <1>;
++        interrupt-parent = <&gpiof>;
++        interrupts = <3 IRQ_TYPE_EDGE_RISING>;
++
++        status = "okay";
++    };
++
++    stts22h_temp@38 {
++        compatible = "st,stts22h";
++        reg = <0x38>;
++
++        // STM32MP1 - X-STM32MP-MSP0: STTS22H_INT (PG2)
++        interrupt-parent = <&gpiog>;
++        interrupts = <2 IRQ_TYPE_EDGE_RISING>;
++
++        status = "okay";
++    };
++
++    st_asm330lhhx@6a {
++        compatible = "st,asm330lhhx";
++        reg =<0x6a>;
++
++        // STM32MP1 - X-STM32MP-MSP0: DIL24_INT1 (PG15)
++        st,int-pin = <1>;
++        interrupt-parent = <&gpiog>;
++        interrupts = <15 IRQ_TYPE_LEVEL_HIGH>;
++
++        wakeup-source;
++
++        status = "okay";
++    };
++
+ };
+ 
+ &i2s2 {
+@@ -721,22 +810,22 @@ &uart4 {
+ };
+ 
+ &uart7 {
+-	pinctrl-names = "default", "sleep", "idle";
++	pinctrl-names = "default", "sleep";
+ 	pinctrl-0 = <&uart7_pins_c>;
+ 	pinctrl-1 = <&uart7_sleep_pins_c>;
+ 	pinctrl-2 = <&uart7_idle_pins_c>;
+ 	/delete-property/dmas;
+ 	/delete-property/dma-names;
+-	status = "disabled";
++	status = "okay";
+ };
+ 
+ &usart3 {
+-	pinctrl-names = "default", "sleep", "idle";
++	pinctrl-names = "default", "sleep";
+ 	pinctrl-0 = <&usart3_pins_c>;
+ 	pinctrl-1 = <&usart3_sleep_pins_c>;
+ 	pinctrl-2 = <&usart3_idle_pins_c>;
+ 	uart-has-rtscts;
+-	status = "disabled";
++	status = "okay";
+ };
+ 
+ &usbh_ehci {

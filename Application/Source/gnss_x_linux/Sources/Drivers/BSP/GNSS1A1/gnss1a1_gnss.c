@@ -18,7 +18,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "gnss1a1_gnss.h"
-#define SERIALTERMINAL      "/dev/ttySTM2"
+#define SERIALTERMINAL      "/dev/ttySTM1"
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>

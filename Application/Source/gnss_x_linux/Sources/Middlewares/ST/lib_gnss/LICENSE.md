@@ -1,9 +1,13 @@
+This software component is provided to you as part of a software package and
+applicable license terms are in the Package_license file. If you received this
+software component outside of a package or without applicable license terms,
+the terms of the SLA0055 license shall apply and are fully reproduced below:
+
 SLA0055 Rev4/May 2017
 
-## Software license agreement
+Software license agreement
 
-### __SOFTWARE LICENSE AGREEMENT ("Agreement")__
-
+SOFTWARE LICENSE AGREEMENT ("Agreement")
 The Licensed Software as defined below may contain various software that are subject to different
 license agreements. The terms and conditions of those license agreements are available below, as well
 as in the header files and documentation file accompanying this delivery.
@@ -42,8 +46,7 @@ THOSE LICENSES. IF YOU DO NOT AGREE WITH ANY CONDITION OF THOSE LICENSES, DO
 NOT INSTALL, DOWNLOAD, ACCESS OR USE THE SOFTWARE IN THIS DELIVERY.
 
 
-__ST SOFTWARE LICENSE__
-
+ST SOFTWARE LICENSE
 By using this Licensed Software, You are agreeing to be bound by the terms and conditions of this
 Agreement. Do not use the Licensed Software until You have read and agreed to the following terms
 and conditions and with the other terms and conditions that may apply according with (ii) and (iii) here
@@ -51,8 +54,7 @@ above. The use of the Licensed Software implies automatically the acceptance of 
 and conditions.
 
 
-__DEFINITIONS__
-
+DEFINITIONS
 Affiliates: means any corporation, partnership, or other entity that, directly or indirectly, owns, is owned
 by, or is under common ownership with ST, for so long as such ownership exists. For the purposes of
 the foregoing, "own," "owned," or "ownership" shall mean ownership of more than fifty percent (50%) of
@@ -85,8 +87,7 @@ ST Device: means the combination of: a) one ST microcontroller and b) one ST int
 chosen by You provided that a) and b) are manufactured and sold by or for ST.
 
 
-__LICENSE__
-
+LICENSE
 STMicroelectronics International NV a Dutch company with headquarter at 39, Chemin du Champ des
 filles, 1228 Plan-les-Oates Geneva (“ST”) grants to You under IP Rights owned by ST and its Affiliates
 or under which ST and its Affiliates has the right to grant a license a non-exclusive, worldwide, nontransferable (whether by assignment or otherwise unless expressly authorized by ST) non sublicensable, revocable, royalty-free limited license to use the Licensed Software to:
@@ -102,8 +103,7 @@ providing documentation for the Product and its usage;
 through multiple tiers.
 
 
-__OWNERSHIP AND COPYRIGHT__
-
+OWNERSHIP AND COPYRIGHT
 Title to the Licensed Software, related documentation and all copies thereof remain with ST and/or its
 licensors. You may not remove the copyrights notices from the Licensed Software and to any copies of 
 the Licensed Software. You agree to prevent any unauthorized copying of the Licensed Software and
@@ -115,8 +115,7 @@ materials related to this Agreement or referencing or implying ST or its trade n
 service marks can be released without ST prior written approval.
 
 
-__RESTRICTIONS__
-
+RESTRICTIONS
 Unless otherwise explicitly stated in this Agreement, You may not sell, assign, sublicense, lease, rent or
 otherwise distribute the Licensed Software for commercial purposes, in whole or in part. You
 acknowledge and agree that any use, adaptation, translation or transcription of the Licensed Software or
@@ -133,8 +132,7 @@ determination of whether there has been unauthorized use or distribution of the 
 Licensed Software and will take appropriate steps to remedy any unauthorized use or distribution.
 
 
-__NO WARRANTY__
-
+NO WARRANTY
 TO THE EXTENT PERMITTED BY THE LAWS, THE LICENSED SOFTWARE IS PROVIDED “AS IS”
 AND “WITH ALL FAULTS” WITHOUT WARRANTY OR REPRESENTATION OF ANY KIND
 EXPRESSED OR IMPLIED AND ST AND ITS LICENSORS EXPRESSLY DISCLAIM ALL
@@ -192,8 +190,7 @@ FROM OR THAT IS IN CONNECTION WITH THE USE YOU HAVE MADE OF THE LICENSED
 SOFTWARE.
 
 
-__LIMITATION OF LIABILITIES AND INDEMNIFICATION__
-
+LIMITATION OF LIABILITIES AND INDEMNIFICATION
 TO THE EXTENT PERMITTED BY THE LAW IN NO EVENT ST , ITS AFFILIATES, ITS LICENSORS
 AND SUBCONTRACTORS INCLUDING THE OFFICERS, DIRECTORS, EMPLOYEES,
 SHAREHOLDERS OR AGENTS OF ANY OF THEM (“ST PARTIES”) SHALL BE LIABLE TO YOU OR
@@ -216,8 +213,7 @@ FROM OR THAT IS IN CONNECTION WITH THE USE YOU HAVE MADE OF THE LICENSED
 SOFTWARE.
 
 
-__TERMINATION__
-
+TERMINATION
 This Agreement shall be effective as of the moment in which You accept this terms and conditions and
 shall terminate 10 (ten) years thereafter. ST may terminate this Agreement: a) at any time if You are in
 material breach of any of its terms and conditions and You have failed to cure such breach within 30
@@ -227,8 +223,7 @@ ST. After termination, You will be entitled to use the Licensed Software used in
 ST Device manufactured by or for ST, purchased by You before the date of the termination.
 
 
-__COMPLIANCE__
-
+COMPLIANCE
 You agree not to use the Licensed Software in violation of any applicable law, statute, ordinance or
 other regulation or any obligation and to procure any information that may be needed for such a
 purpose. You agree to comply with all applicable laws and regulations affecting the use of the Licensed
@@ -246,8 +241,7 @@ or the usage by You is in breach of any applicable export control law and regula
 applicable law.
 
 
-__APPLICABLE LAW AND JURISDICTION__
-
+APPLICABLE LAW AND JURISDICTION
 This Agreement shall be construed, governed and enforced in accordance with the law of Switzerland
 without regards to its conflict of law provisions. For sake of clarity the United Nations Convention on
 Contracts for the International Sale of Goods (Vienna, 1980) (CISG) shall not apply.
@@ -256,16 +250,14 @@ of Geneva, Switzerland.. Notwithstanding the aforesaid, nothing in this Agreemen
 seeking any interim or final injunctive or equitable relief by a court of competent jurisdiction.
 
 
-__SEVERABILITY__
-
+SEVERABILITY
 If any provision of this agreement or any part thereof is or becomes, at any time or for any reason,
 unenforceable or invalid, no the remaining part of any other provision of this agreement shall be affected
 thereby, and the remaining provisions of this agreement shall continue with the same force and effect as
 if such unenforceable or invalid provisions or parts thereof had not been inserted in this Agreement.
 
 
-__ENTIRE AGREEMENT__
-
+ENTIRE AGREEMENT
 The terms and conditions contained herein constitute the entire agreement between You and ST and
 shall supersede all previous communications either oral or written, between You and ST with respect to
 the subject matter hereof. No oral explanation or oral information by You, ST and its Affiliates hereto
@@ -274,14 +266,12 @@ right of You or ST waived, except by means of an amendment which expressly refer
 Agreement and is duly executed by duly authorised representatives of You, ST and its Affiliates.
 
 
-__WAIVER__
-
+WAIVER
 The waiver by either party of any breach of any provisions of this Agreement shall not operate or be
 construed as a waiver of any other or a subsequent breach of the same or a different provision.
 
 
-__ASSIGNMENT__
-
+ASSIGNMENT
 This Agreement may not be assigned by You, nor any of Your rights or obligations hereunder, to any
 third party without prior written consent of ST (which shall not be unreasonably withheld). In the event
 that this Agreement is assigned effectively to a third party, this Agreement shall bind upon successors
@@ -291,8 +281,7 @@ connection with any transfer of any ST business or part of business to which thi
 by merger, consolidation, reorganization or otherwise.
 
 
-__RELATIONSHIP OF THE PARTIES__
-
+RELATIONSHIP OF THE PARTIES
 Nothing in this Agreement shall create, or be deemed to create, a partnership or the relationship of
 principal and agent or employer and employee between the Parties. Neither Party has the authority or
 power to bind, to contract in the name of or to create a liability for the other in any way or for any

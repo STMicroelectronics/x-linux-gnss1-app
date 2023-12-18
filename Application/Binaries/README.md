@@ -1,0 +1,1 @@
+Binaries for GNSS Application. Refer to https://www.st.com/resource/en/user_manual/um2909-getting-started-with-xlinuxgnss1-package-for-developing-gnss-applications-on-linux-os-stmicroelectronics.pdf 
