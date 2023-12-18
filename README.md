@@ -31,86 +31,67 @@ The software uses STM32MPU Uart and I2C driver for accessign the GNSS data. For 
 
 ### X-LINUX-GNSS1 Package Structure:
 
+```
 x-linux-gnss1-app
-    ¦   en.DM00751078.pdf
-    ¦   Package_License.md
-    ¦   README.md
-    ¦   Release_Notes.md
-    ¦
-    +---Application
-    ¦   +---Binaries
-    ¦   ¦   ¦   README.md
-    ¦   ¦   ¦
-    ¦   ¦   +---gnss1
-    ¦   ¦   ¦       -gnss app binaries
-    ¦   ¦   ¦
-    ¦   ¦   +---gnss1-rtk-lib
-    ¦   ¦           -Binaries for RTK lib
-    ¦   ¦
-    ¦   +---Source
-    ¦       +---gnss_i2c
-    ¦       ¦       gnss_i2c_read.c
-    ¦       ¦       LICENSE.md
-    ¦       ¦       Makefile
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_python
-    ¦       ¦       gnss_pynmea2.py
-    ¦       ¦       LICENSE.md
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_rtk-lib
-    ¦       ¦       -Patch for RTK Lib
-    ¦       ¦
-    ¦       +---gnss_uart
-    ¦       ¦       gnss_uart_read.c
-    ¦       ¦       LICENSE.md
-    ¦       ¦       Makefile
-    ¦       ¦       README.md
-    ¦       ¦
-    ¦       +---gnss_x_linux
-    ¦           ¦   LICENSE.md
-    ¦           ¦   Makefile
-    ¦           ¦   README.md
-    ¦           ¦
-    ¦           +---Sources
-    ¦               ¦   CMakeLists.txt
-    ¦               ¦
-    ¦               +---cloud
-    ¦               ¦       -Cloud interface Sources
-    ¦               ¦
-    ¦               +---Drivers
-    ¦               ¦   +---BSP
-    ¦               ¦       -BSP Sources
-    ¦               ¦
-    ¦               +---Inc
-    ¦               ¦       -headers
-    ¦               ¦
-    ¦               +---Middlewares
-    ¦               ¦   +---ST
-    ¦               ¦       +---Middle Ware Sources
-    ¦               ¦
-    ¦               +---Src
-    ¦               ¦       -Application Sources
-    ¦               ¦
-    ¦               +---_htmresc
-    ¦                       logos
-    ¦
-    +---linux-kernel
-    ¦   +---patch
-    ¦       +---5.15
-    ¦           +---device-tree
-    ¦           ¦   +---patches
-    ¦           ¦   ¦       gnss1.patch
-    ¦           ¦   ¦
-    ¦           ¦   +---Sources
-    ¦           ¦           stm32mp157f-dk2.dts
-    ¦           ¦
-    ¦           +---kernel
-    ¦                   -Kernel patches and Fragments
-    ¦
-    +---_htmresc
-            -Logos
+├── en.DM00751078.pdf
+├── Package_License.md
+├── README.md
+├── Release_Notes.md
+├── Application
+│   ├── Binaries
+│   │   ├── README.md
+│   │   ├── gnss1
+│   │   │   └── gnss app binaries
+│   │   └── gnss1-rtk-lib
+│   │       └── Binaries for RTK lib
+│   └── Source
+│       ├── gnss_i2c
+│       │   ├── gnss_i2c_read.c
+│       │   ├── LICENSE.md
+│       │   ├── Makefile
+│       │   └── README.md
+│       ├── gnss_python
+│       │   ├── gnss_pynmea2.py
+│       │   ├── LICENSE.md
+│       │   └── README.md
+│       ├── gnss_rtk-lib
+│       │   └── Patch for RTK Lib
+│       ├── gnss_uart
+│       │   ├── gnss_uart_read.c
+│       │   ├── LICENSE.md
+│       │   ├── Makefile
+│       │   └── README.md
+│       └── gnss_x_linux
+│           ├── LICENSE.md
+│           ├── Makefile
+│           ├── README.md
+│           └── Sources
+│               ├── CMakeLists.txt
+│               ├── cloud
+│               │   └── Cloud interface Sources
+│               ├── Drivers
+│               │   └── BSP
+│               │       └── BSP Sources
+│               ├── Inc
+│               │   └── headers
+│               ├── Middlewares
+│               │   └── ST
+│               │       └── Middle Ware Sources
+│               └── Src
+│                   └── Application Sources
+├── linux-kernel
+│   └── patch
+│       └── 5.15
+│           ├── device-tree
+│           │   ├── patches
+│           │   │   └── gnss1.patch
+│           │   └── Sources
+│           │       └── stm32mp157f-dk2.dts
+│           └── kernel
+│               └── Kernel patches and Fragments
+└── _htmresc
+    └── Logos
+```
 
 ## Hardware Setup:
 
