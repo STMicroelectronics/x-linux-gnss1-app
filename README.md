@@ -1,7 +1,7 @@
 
-# X-LINUX_GNSS1_V1.2.0 Linux Package
+# X-LINUX_GNSS1_V1.3.0 Linux Package
 
-![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-gnss1.svg?color=brightgreen)
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-gnss1-app.svg?color=brightgreen)
 
 ## Introduction
 **The X-LINUX-GNSS1-APP** is a Linux Software Package running on STM32MPU .This software provides user level applications for reading the NMEA GNSS data from X-STM32MP-GNSS1 plugged to the 40 pin connector of STM32MP157F-DK2 Discovery Board .
@@ -20,6 +20,7 @@ Its main feature are :
 -Complete software to build applications on Linux using Teseo-LIV3F GNSS module
 -Middleware for the NMEA protocol
 -RTK ( Real Time Kinematics ) Library example and QT application.
+-EKF ( Extended Kalman Filter ) Application example
 -POSIX thread task scheduling to ensure better asynchronous message parsing
 -Easy portability across different Linux platforms
 -Application example to retrieve and parse GNSS data and send them to DSH-ASSETRACKING for live tracking
