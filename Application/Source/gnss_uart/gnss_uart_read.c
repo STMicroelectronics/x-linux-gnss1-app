@@ -50,10 +50,20 @@ int set_interface_attribs(int fd, int speed);
 static int GNSS_Reset();
 
 
-int main()
+int main(int argc,char *argv[])
 {
     char *portname = SERIALTERMINAL;
     int fd;
+    int baud_rate;
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <baud_rate>\n", argv[0]);
+        return -1;
+    }
+    baud_rate = atoi(argv[1]);
+    if (baud_rate <= 0) {
+        fprintf(stderr, "Invalid baud rate: %s\n", argv[1]);
+        return -1;
+    }
 
 
     /*Reset The GNSS Device */
@@ -67,7 +77,8 @@ int main()
     }
     /*for X-NUCLEO-GNSS1A1(Teseo-LIV3F) : baudrate 9600, 8 bits, no parity, 1 stop bit */
     /*for X-NUCLEO-GNSS2A1(Teseo-VIC3DA) : baudrate 115200, 8 bits, no parity, 1 stop bit */
-    set_interface_attribs(fd, B115200);
+    
+    set_interface_attribs(fd, baud_rate);
 
     /* Continously read the data */
     do {
@@ -134,6 +145,7 @@ int set_interface_attribs(int fd, int speed)
         printf("Error from tcsetattr: %s\n", strerror(errno));
         return -1;
     }
+
     return 0;
 }
 

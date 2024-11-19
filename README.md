@@ -1,6 +1,5 @@
 
-# X-LINUX_GNSS1_V1.3.0 Linux Package
-
+# X-LINUX_GNSS1_V1.4.0 Linux Package
 ![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-linux-gnss1-app.svg?color=brightgreen)
 
 ## Introduction
@@ -16,15 +15,15 @@ from X-STM32MP-GNSS1.It also contains the corresponding QT Application for Westo
 ### X-LINUX-GNSS1 software features:
 
 Its main feature are :
--Standalone applications to read the NMEA data over UART and IÂ²C
+-Standalone applications to read the NMEA data over UART and I²C
 -Complete software to build applications on Linux using Teseo-LIV3F GNSS module
 -Middleware for the NMEA protocol
 -RTK ( Real Time Kinematics ) Library example and QT application.
--EKF ( Extended Kalman Filter ) Application example
 -POSIX thread task scheduling to ensure better asynchronous message parsing
 -Easy portability across different Linux platforms
 -Application example to retrieve and parse GNSS data and send them to DSH-ASSETRACKING for live tracking
 -Python example to read the NMEA data over UART
+-EKF application to fuse IMU senosrs data with GPS data for better accuracy
 -For detailed instructions refer "Getting started with X-LINUX-GNSS1 package for developing GNSS Applications on Linux : https://www.st.com/resource/en/user_manual/um2909-getting-started-with-xlinuxgnss1-package-for-developing-gnss-applications-on-linux-os-stmicroelectronics.pdf"  
 
 
@@ -34,73 +33,187 @@ The software uses STM32MPU Uart and I2C driver for accessign the GNSS data. For 
 
 ### X-LINUX-GNSS1 Package Structure:
 
-```
 x-linux-gnss1-app
-â”œâ”€â”€ en.DM00751078.pdf
-â”œâ”€â”€ Package_License.md
-â”œâ”€â”€ README.md
-â”œâ”€â”€ Release_Notes.md
-â”œâ”€â”€ Application
-â”‚   â”œâ”€â”€ Binaries
-â”‚   â”‚   â”œâ”€â”€ README.md
-â”‚   â”‚   â”œâ”€â”€ gnss1
-â”‚   â”‚   â”‚   â””â”€â”€ gnss app binaries
-â”‚   â”‚   â””â”€â”€ gnss1-rtk-lib
-â”‚   â”‚       â””â”€â”€ Binaries for RTK lib
-â”‚   â””â”€â”€ Source
-â”‚       â”œâ”€â”€ gnss_i2c
-â”‚       â”‚   â”œâ”€â”€ gnss_i2c_read.c
-â”‚       â”‚   â”œâ”€â”€ LICENSE.md
-â”‚       â”‚   â”œâ”€â”€ Makefile
-â”‚       â”‚   â””â”€â”€ README.md
-â”‚       â”œâ”€â”€ gnss_python
-â”‚       â”‚   â”œâ”€â”€ gnss_pynmea2.py
-â”‚       â”‚   â”œâ”€â”€ LICENSE.md
-â”‚       â”‚   â””â”€â”€ README.md
-â”‚       â”œâ”€â”€ gnss_rtk-lib
-â”‚       â”‚   â””â”€â”€ Patch for RTK Lib
-â”‚       â”œâ”€â”€ gnss_uart
-â”‚       â”‚   â”œâ”€â”€ gnss_uart_read.c
-â”‚       â”‚   â”œâ”€â”€ LICENSE.md
-â”‚       â”‚   â”œâ”€â”€ Makefile
-â”‚       â”‚   â””â”€â”€ README.md
-â”‚       â””â”€â”€ gnss_x_linux
-â”‚           â”œâ”€â”€ LICENSE.md
-â”‚           â”œâ”€â”€ Makefile
-â”‚           â”œâ”€â”€ README.md
-â”‚           â””â”€â”€ Sources
-â”‚               â”œâ”€â”€ CMakeLists.txt
-â”‚               â”œâ”€â”€ cloud
-â”‚               â”‚   â””â”€â”€ Cloud interface Sources
-â”‚               â”œâ”€â”€ Drivers
-â”‚               â”‚   â””â”€â”€ BSP
-â”‚               â”‚       â””â”€â”€ BSP Sources
-â”‚               â”œâ”€â”€ Inc
-â”‚               â”‚   â””â”€â”€ headers
-â”‚               â”œâ”€â”€ Middlewares
-â”‚               â”‚   â””â”€â”€ ST
-â”‚               â”‚       â””â”€â”€ Middle Ware Sources
-â”‚               â””â”€â”€ Src
-â”‚                   â””â”€â”€ Application Sources
-â”œâ”€â”€ linux-kernel
-â”‚   â””â”€â”€ patch
-â”‚       â””â”€â”€ 5.15
-â”‚           â”œâ”€â”€ device-tree
-â”‚           â”‚   â”œâ”€â”€ patches
-â”‚           â”‚   â”‚   â””â”€â”€ gnss1.patch
-â”‚           â”‚   â””â”€â”€ Sources
-â”‚           â”‚       â””â”€â”€ stm32mp157f-dk2.dts
-â”‚           â””â”€â”€ kernel
-â”‚               â””â”€â”€ Kernel patches and Fragments
-â””â”€â”€ _htmresc
-    â””â”€â”€ Logos
-```
+¦   Package_License.md
+¦   README.md
+¦   Release_Notes.md
+¦   CODE_OF_CONDUCT.md
+¦   CONTRIBUTING.md
+¦   LICENSE.md
+¦
++---Application
+¦   +---Binaries
+¦   ¦   ¦   README.md
+¦   ¦   ¦
+¦   ¦   +---gnss1
+¦   ¦   ¦   +---STM32MP157F-DK2_Bins
+¦   ¦   ¦   ¦       gnss_app
+¦   ¦   ¦   ¦       gnss_i2c_read
+¦   ¦   ¦   ¦       gnss_uart_read
+¦   ¦   ¦   ¦
+¦   ¦   ¦   +---STM32MP257F-EV1_bins
+¦   ¦   ¦           gnss_app
+¦   ¦   ¦           gnss_i2c_read
+¦   ¦   ¦           gnss_uart_read
+¦   ¦   ¦
+¦   ¦   +---gnss1-ekf
+¦   ¦   ¦   +---STM32MP157F-DK2_Bins
+¦   ¦   ¦   ¦       gnss1-ekf-dbg_0.1-r0.22_armhf.deb
+¦   ¦   ¦   ¦       gnss1-ekf-dev_0.1-r0.22_armhf.deb
+¦   ¦   ¦   ¦       gnss1-ekf_0.1-r0.22_armhf.deb
+¦   ¦   ¦   ¦
+¦   ¦   ¦   +---STM32MP257F-EV1_bins
+¦   ¦   ¦           gnss1-ekf-dbg_0.1-r0.18_arm64.deb
+¦   ¦   ¦           gnss1-ekf-dev_0.1-r0.18_arm64.deb
+¦   ¦   ¦           gnss1-ekf_0.1-r0.18_arm64.deb
+¦   ¦   ¦
+¦   ¦   +---gnss1-rtk-lib
+¦   +---Source
+¦       +---gnss_ekf
+¦       ¦       analyze_lonlat.py
+¦       ¦       arg_plot_coords.py
+¦       ¦       ekf_support.patch
+¦       ¦       README.md
+¦       ¦       run_ekf.sh
+¦       ¦       stop_ekf.sh
+¦       ¦
+¦       +---gnss_i2c
+¦       ¦       gnss_i2c_read.c
+¦       ¦       LICENSE.md
+¦       ¦       Makefile
+¦       ¦       README.md
+¦       ¦
+¦       +---gnss_python
+¦       ¦       gnss_pynmea2.py
+¦       ¦       LICENSE.md
+¦       ¦       README.md
+¦       ¦
+¦       +---gnss_rtk-lib
+¦       ¦       fragment-07-X-STM32MP_FTDI_full.config
+¦       ¦       README.md
+¦       ¦       rtklib_stm32mp1.patch
+¦       ¦
+¦       +---gnss_uart
+¦       ¦       gnss_uart_read.c
+¦       ¦       LICENSE.md
+¦       ¦       Makefile
+¦       ¦       README.md
+¦       ¦
+¦       +---gnss_x_linux
+¦           ¦   LICENSE.md
+¦           ¦   Makefile
+¦           ¦   readme.md
+¦           ¦
+¦           +---Sources
+¦               ¦   CMakeLists.txt
+¦               ¦
+¦               +---cloud
+¦               ¦       cloud_comm_common.h
+¦               ¦       cloud_comm_config.c
+¦               ¦       cloud_comm_config.h
+¦               ¦       cloud_comm_https.c
+¦               ¦       cloud_comm_https.h
+¦               ¦       cloud_helper.c
+¦               ¦       creds.conf
+¦               ¦       gps_parser.h
+¦               ¦       LICENSE.md
+¦               ¦
+¦               +---Drivers
+¦               ¦   +---BSP
+¦               ¦       +---Components
+¦               ¦       ¦   +---Common
+¦               ¦       ¦   ¦       accelerometer.h
+¦               ¦       ¦   ¦       audio.h
+¦               ¦       ¦   ¦       component.h
+¦               ¦       ¦   ¦       GasGauge.h
+¦               ¦       ¦   ¦       gnss.h
+¦               ¦       ¦   ¦       gyroscope.h
+¦               ¦       ¦   ¦       humidity.h
+¦               ¦       ¦   ¦       magnetometer.h
+¦               ¦       ¦   ¦       pressure.h
+¦               ¦       ¦   ¦       prox.h
+¦               ¦       ¦   ¦       Release_Notes.html
+¦               ¦       ¦   ¦       sensor.h
+¦               ¦       ¦   ¦       temperature.h
+¦               ¦       ¦   ¦
+¦               ¦       ¦   +---teseo_liv3f
+¦               ¦       ¦           LICENSE.md
+¦               ¦       ¦           Release_Notes.html
+¦               ¦       ¦           teseo_liv3f.c
+¦               ¦       ¦           teseo_liv3f.h
+¦               ¦       ¦           teseo_liv3f_i2c.c
+¦               ¦       ¦           teseo_liv3f_i2c.h
+¦               ¦       ¦           teseo_liv3f_queue.c
+¦               ¦       ¦           teseo_liv3f_queue.h
+¦               ¦       ¦           teseo_liv3f_uart.c
+¦               ¦       ¦           teseo_liv3f_uart.h
+¦               ¦       ¦
+¦               ¦       +---GNSS1A1
+¦               ¦               gnss1a1_gnss.c
+¦               ¦               gnss1a1_gnss.h
+¦               ¦               LICENSE.md
+¦               ¦               Release_Notes.html
+¦               ¦
+¦               +---Inc
+¦               ¦       app_gnss.h
+¦               ¦       gnss1a1_conf.h
+¦               ¦       gnss_feature_cfg_data.h
+¦               ¦       gnss_lib_config.h
+¦               ¦       gnss_utils.h
+¦               ¦       main.h
+¦               ¦       teseo_liv3f_conf.h
+¦               ¦
+¦               +---Middlewares
+¦               ¦   +---ST
+¦               ¦       +---lib_gnss
+¦               ¦           ¦   LICENSE.md
+¦               ¦           ¦   Release_Notes.html
+¦               ¦           ¦
+¦               ¦           +---LibGNSS
+¦               ¦           ¦   +---Inc
+¦               ¦           ¦   ¦       gnss_data.h
+¦               ¦           ¦   ¦       gnss_datalog.h
+¦               ¦           ¦   ¦       gnss_geofence.h
+¦               ¦           ¦   ¦       gnss_lib_config_template.h
+¦               ¦           ¦   ¦       gnss_parser.h
+¦               ¦           ¦   ¦
+¦               ¦           ¦   +---Src
+¦               ¦           ¦           gnss_data.c
+¦               ¦           ¦           gnss_parser.c
+¦               ¦           ¦
+¦               ¦           +---LibNMEA
+¦               ¦               +---Inc
+¦               ¦               ¦       NMEA_parser.h
+¦               ¦               ¦
+¦               ¦               +---Src
+¦               ¦                       NMEA_parser.c
+¦               ¦
+¦               +---Src
+¦                       app_gnss.c
+¦                       gnss_lib_config.c
+¦                       gnss_utils.c
+¦                       main.c
+¦
++---linux-kernel
+    +---patch
+        +---6.1
+            +---device-tree
+            ¦   +---patches
+            ¦   ¦       0024-GNSS1-enable-sensors-dts.patch
+            ¦   ¦       0024-GNSS1-enable-sensors_mp157f-dts.patch
+            ¦   ¦
+            ¦   +---Sources
+            +---kernel
+                    0024-GNSS1-enable-sensors-dts.patch
+                    0024-GNSS1-enable-sensors_mp157f-dts.patch
+                    0028-GNSS1-enable-MP2-v6.1-STM32MP.patch
+                    fragment-X-GNSS1-STM32MP_full.config
 
 ## Hardware Setup:
 
 The current package provides software support for the following boards
- - [X-STM32MP-GNSSx board mounted on STM32MP157F-DK2](https://www.st.com/en/evaluation-tools/x-stm32mp-gnss1.html) based on Teseo-LIV3FL (or X-STM32MP-GNSS2 based on Teseo-LIV4FL). 
- - The board is also compatible with X-NUCLEO-GNSSx and X-NUCLEO-LIV* boards plugged to the Arduino Connectors of STM32MP157F-DK2 Board
+ - [X-STM32MP-GNSSx board mounted on STM32MP157F-DK2 and STM32MP257F-EV1](https://www.st.com/en/ecosystems/x-nucleo-ihm15a1.html) based on Teseo-LIV3FL or Teseo-LIV4FL. 
+ - The board is also compatible with X-NUCLEO-GNSSx and X-NUCLEO-LIV* boards plugged to the Arduino Connectors
 
 ## Software Setup:
 
@@ -108,10 +221,10 @@ The section describes the software setup that is required for building, flashing
 
 ### Recommended PC prerequisites
 
-A LinuxÂ® PC running UbuntuÂ® 20.04 or 22.04 is recommended. Developers can follow the link below for details.
+A Linux® PC running Ubuntu® 20.04 or 22.04 is recommended. Developers can follow the link below for details.
 https://wiki.st.com/stm32mpu/wiki/PC_prerequisites
 
-Follow the instructions on the ST wiki page [Image flashing](https://wiki.st.com/stm32mpu/wiki/STM32MP15_Discovery_kits_-_Starter_Package#Image_flashing) to prepare a bootable SD card with the starter package.  
+Follow the instructions on the ST wiki page [Image flashing](https://www.st.com/en/embedded-software/stm32mp1starter.html , https://www.st.com/en/embedded-software/stm32mp2starter.html) to prepare a bootable SD card with the starter package.  
 Alternatively, a Windows / Mac computer can also be used; in that case, the following tools would be useful:
 - Use [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) to flash the OpenSTLinux started package image onto the SD card
 - Use [TeraTerm](https://github.com/TeraTermProject/osdn-download/releases/) or [PuTTY](https://putty.org/) to access the console interface via USB
@@ -139,9 +252,9 @@ The resources can be transferred via any of the following methods:
 1. **Using a network connection**
 
 Refer to [How to Transfer a File Over a Network](https://wiki.st.com/stm32mpu/wiki/How_to_transfer_a_file_over_network)
-Â 
+ 
 To connect the MPU board to a network, you may connect it to a wired network via the Ethernet jack on the MPU board.  
-Â 
+ 
 **OR**  
 
 To connect to a WLAN, refer to [How to Setup a WLAN Connection"](https://wiki.st.com/stm32mpu/wiki/How_to_setup_a_WLAN_connection)
@@ -172,9 +285,9 @@ Details about the content of this release are available in the release note [her
 
 ## Compatibility information
 
-The software package is validated for the [OpenSTLinux](https://www.st.com/en/embedded-software/stm32-mpu-openstlinux-distribution.html) version 5.0. 
+The software package is validated for the [OpenSTLinux](https://www.st.com/en/embedded-software/stm32-mpu-openstlinux-distribution.html) version 5.1.0
 For running the software on other ecosystem versions customization may be needed.
-The software is tested on the [STM32MP157F-DK2](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html) board.
+The software is tested on the [STM32MP157F-DK2 and STM32MP257F-EV1] board.
 
 
 #### Related Information and Documentation:
@@ -183,3 +296,4 @@ The software is tested on the [STM32MP157F-DK2](https://www.st.com/en/evaluation
 - [STM32MP157F-DK2](https://www.st.com/en/evaluation-tools/stm32mp157f-dk2.html)
 - [X-NUCLEO-GNSS1A1](https://www.st.com/en/ecosystems/x-nucleo-gnss1a1.html)
 - [X-NUCLEO-GNSS2A1](https://www.st.com/en/ecosystems/x-nucleo-gnss2a1.html)
+- [STM32MP257F-EV1](https://www.st.com/en/evaluation-tools/stm32mp257f-ev1.html)
